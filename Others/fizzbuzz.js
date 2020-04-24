@@ -22,16 +22,28 @@ function fizzbuzz2() {
 
     for (let i = 1; i <= 100; i++) {
         const fuzz = i % 3 === 0;
-        const buzz = i % 5 == 0;
+        const buzz = i % 5 === 0;
         if (fuzz && buzz) {
             console.log("FizzBuzz");
-        } else if (fuzz && !buzz) {
+        } else if (fuzz) {
             console.log("Fizz");
-        } else if (buzz && !fuzz) {
+        } else if (buzz) {
             console.log("Buzz");
         } else {
             console.log(i);
         }
     }
 }
-fizzbuzz2()
+//fizzbuzz2()
+
+
+// Method 3: Conditional operator
+function fizzbuzz3() {
+
+    for (let i = 1; i <= 100; i++) {
+        const fuzz = i % 3 === 0;
+        const buzz = i % 5 === 0;
+        console.log(fuzz && buzz ? "FizzBuzz" : (fuzz ? "Fizz" : (buzz ? "Buzz" : i)));
+    }
+}
+fizzbuzz3()
